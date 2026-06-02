@@ -637,6 +637,31 @@ nav {
   margin-right: auto;
 }
 
+/* ---- Students Page ---- */
+.students-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.students-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.students-list li:last-child {
+  border-bottom: none;
+}
+
+.student-degree {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-left: 6px;
+}
+
 /* ---- No Results ---- */
 .no-results {
   text-align: center;
