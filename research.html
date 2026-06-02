@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Assaf Romm</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Assaf Romm</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Page content ── -->
+<div class="page-content">
+
+  <div class="research-header">
+    <h1 style="font-size:1.9rem; color:var(--primary-dark); margin-bottom:6px;">Research</h1>
+    <p style="color:var(--text-mid); font-family:'Arial',sans-serif; font-size:0.93rem;">
+      Papers are listed by year (most recent first). Click a category tag to filter.
+    </p>
+  </div>
+
+  <!-- Controls -->
+  <div class="research-controls">
+    <button class="btn btn-primary" id="search-btn">🔍 Search</button>
+    <button class="btn btn-outline" id="filter-btn">⚙ Filter</button>
+  </div>
+
+  <!-- Search bar (hidden until toggled) -->
+  <div class="search-wrap" id="search-wrap">
+    <input type="text" id="search-input" placeholder="Search by title, author, keyword…" autocomplete="off" />
+    <button class="btn btn-sm btn-ghost" id="search-close">✕</button>
+  </div>
+
+  <!-- Filter panel (hidden until toggled) -->
+  <div class="filter-panel" id="filter-panel">
+
+    <div class="filter-group">
+      <label class="filter-title">Category</label>
+      <div class="filter-checkboxes">
+        <label>
+          <input type="checkbox" class="cat-filter" value="Game Theory" />
+          <span class="tag tag-game-theory" style="pointer-events:none">Game Theory</span>
+        </label>
+        <label>
+          <input type="checkbox" class="cat-filter" value="Matching Theory" />
+          <span class="tag tag-matching-theory" style="pointer-events:none">Matching Theory</span>
+        </label>
+        <label>
+          <input type="checkbox" class="cat-filter" value="Practical Market Design" />
+          <span class="tag tag-practical-market-design" style="pointer-events:none">Practical Market Design</span>
+        </label>
+        <label>
+          <input type="checkbox" class="cat-filter" value="Behavioral Market Design" />
+          <span class="tag tag-behavioral-market-design" style="pointer-events:none">Behavioral Market Design</span>
+        </label>
+        <label>
+          <input type="checkbox" class="cat-filter" value="Other" />
+          <span class="tag tag-other" style="pointer-events:none">Other</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-title">Coauthor</label>
+      <select id="coauthor-filter" class="coauthor-select">
+        <option value="">All coauthors</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-title">Year range</label>
+      <div class="year-range-row">
+        <input type="number" id="year-min" placeholder="From" min="1900" max="2100" />
+        <span>–</span>
+        <input type="number" id="year-max" placeholder="To"   min="1900" max="2100" />
+      </div>
+    </div>
+
+    <div class="filter-footer">
+      <button class="btn btn-sm btn-ghost" id="clear-filters">Clear filters</button>
+    </div>
+  </div>
+
+  <!-- Result count -->
+  <div class="paper-count" id="paper-count"></div>
+
+  <!-- Papers rendered here -->
+  <div id="papers-container">
+    <div class="no-results" style="padding:40px 0;">
+      Loading papers…
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Cite Modal ── -->
+<div class="modal-overlay" id="cite-modal" role="dialog" aria-modal="true" aria-label="Citation">
+  <div class="modal-box">
+    <button class="modal-close" id="cite-close" aria-label="Close">×</button>
+    <h3>Cite this paper</h3>
+
+    <p style="font-family:'Arial',sans-serif;font-size:0.82rem;color:var(--text-light);margin-bottom:6px;">
+      Plain text citation
+    </p>
+    <div class="cite-text" id="cite-citation"></div>
+
+    <p style="font-family:'Arial',sans-serif;font-size:0.82rem;color:var(--text-light);margin:14px 0 6px;">
+      BibTeX
+    </p>
+    <div class="cite-text" id="cite-bibtex"></div>
+
+    <div class="modal-footer">
+      <button class="btn btn-sm btn-ghost" id="copy-citation-btn">Copy citation</button>
+      <button class="btn btn-sm btn-outline" id="copy-bibtex-btn">Copy BibTeX</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <p>&copy; 2025 Assaf Romm &nbsp;·&nbsp;
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="research.html">Research</a> &nbsp;·&nbsp;
+    <a href="cv.html">CV</a>
+  </p>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+
+  // Search close button
+  document.getElementById('search-close')?.addEventListener('click', () => {
+    document.getElementById('search-wrap').classList.remove('open');
+    document.getElementById('search-input').value = '';
+    if (typeof refresh === 'function') refresh();
+  });
+</script>
+<script src="js/bib-parser.js"></script>
+</body>
+</html>

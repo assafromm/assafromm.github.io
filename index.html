@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assaf Romm — Economist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Assaf Romm</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-photo" id="hero-photo">
+      <!-- Replace with: <img src="photo.jpg" alt="Assaf Romm" /> -->
+      👤
+    </div>
+    <div class="hero-text">
+      <h1>Assaf Romm</h1>
+      <p class="hero-title">Lecturer (Assistant Professor) in Operations Research / Operations Management</p>
+      <p class="hero-inst">
+        <a href="https://en.huji.ac.il/schools-faculties/business-school/" target="_blank" rel="noopener">
+          Jerusalem School of Business Administration
+        </a> &amp;
+        <a href="https://www.ratio.huji.ac.il/en" target="_blank" rel="noopener">
+          Federmann Center for the Study of Rationality
+        </a><br>
+        The Hebrew University of Jerusalem
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main content ── -->
+<div class="page-content">
+
+  <!-- Bio -->
+  <section class="bio-section">
+    <h2 class="section-title">About</h2>
+    <p>
+      I am a Lecturer (Assistant Professor) in the
+      <a href="https://en.huji.ac.il/schools-faculties/business-school/" target="_blank" rel="noopener">Jerusalem School of Business Administration</a>
+      at the <a href="https://www.huji.ac.il/en" target="_blank" rel="noopener">Hebrew University of Jerusalem</a>,
+      and a member of the
+      <a href="https://www.ratio.huji.ac.il/en" target="_blank" rel="noopener">Federmann Center for the Study of Rationality</a>.
+    </p>
+    <p>
+      My research focuses on <strong>market design</strong> and <strong>matching theory</strong>.
+      I am particularly interested in the design of matching markets—centralized procedures that
+      assign people to positions, schools, or programs—and in understanding how behavioral
+      considerations shape the performance of these mechanisms in practice.
+    </p>
+    <p>
+      In recent years I have been involved in redesigning several real-world Israeli matching markets,
+      including the Israeli medical internship match, the Israeli psychology master's match, and the Israeli gap-year programs match.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">
+            <a href="mailto:assaf.romm@mail.huji.ac.il">assaf.romm@mail.huji.ac.il</a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">School</span>
+          <span class="contact-value">
+            <a href="https://en.huji.ac.il/schools-faculties/business-school/" target="_blank" rel="noopener">
+              Jerusalem School of Business Administration
+            </a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Institution</span>
+          <span class="contact-value">
+            The Hebrew University of Jerusalem<br>
+            Mount Scopus, Jerusalem 91905, Israel
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Links</span>
+          <span class="contact-value">
+            <a href="https://scholar.google.com/citations?user=Ag2_Dd4AAAAJ" target="_blank" rel="noopener">Google Scholar</a> &nbsp;·&nbsp;
+            <a href="https://ideas.repec.org/f/pro878.html" target="_blank" rel="noopener">IDEAS/RePEC</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <p>&copy; 2025 Assaf Romm &nbsp;·&nbsp;
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="research.html">Research</a> &nbsp;·&nbsp;
+    <a href="cv.html">CV</a>
+  </p>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
